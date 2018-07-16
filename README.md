@@ -8,7 +8,7 @@
 | <center>method</center> | <center>description</center> |
 | --- | --- |
 | ＿init＿(w=60, h=23) | 初始化世界地圖 |
-| initialize\(p=1\) |初始化地圖的生命狀態<br><blockquote>p=1: Glider<br> p=2: Lightweight<br>p=3: pulsar<br>p=4~100: 數字為生命(cell)佔地圖的百分比</blockquote> |
+| initialize\(p=1\) |初始化地圖的生命狀態<br>p=1: Glider<br> p=2: Lightweight<br>p=3: pulsar<br>p=4~100: 數字為生命(cell)佔地圖的百分比 |
 | proceed(t) | 展示世界地圖 t 個世代的生命狀態，每秒刷新一次 | 
 | display() | 顯示世界地圖 |
 ### ```map.py```
