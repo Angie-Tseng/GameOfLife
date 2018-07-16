@@ -1,7 +1,26 @@
 import time
 import random
 import math
-from Map import *
+from map import *
+
+'''
+This is a class for generating a game manager for Game of Life.
+
+__init__(int w, int h):
+    generate a w*h map.
+
+void initialize(int p): 
+    initialize the map according to p.
+    if p = 1~3: generate certain image by using map.py.
+    else: generate w*h*p% cells.
+
+void proceed(int t):
+    Display t generations.
+
+void display():
+    Display the map.
+
+'''
 
 class GameOfLife:    
     neighbor = [
@@ -50,9 +69,9 @@ class GameOfLife:
     def initialize(self, p = 1):
         if p >= 4:
             n = int(self.__w * self.__h * p / 100)
-            cells = random.sample(range(w*h), n)
+            cells = random.sample(range(self.__w*self.__h), n)
             for cell in cells:
-                self.__map[int(cell / w)] [int(cell % w)] = 1
+                self.__map[int(cell / self.__w)] [int(cell % self.__w)] = 1
             return
 
         generate = Map(self.__w, self.__h)
@@ -80,30 +99,3 @@ class GameOfLife:
         else:
             if sum == 3: return 1
         return 0
-
-if __name__ == '__main__':
-    # You should not modify this part.
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--width',
-                       default='60',
-                       help='input the width of the map')
-    parser.add_argument('--height',
-                        default='23',
-                        help='input the height of the map')
-    parser.add_argument('--pattern',
-                        default='1',
-                        help='input pattern')
-    parser.add_argument('--generation',
-                        default='1',
-                        help='input generation')
-    args = parser.parse_args()
-
-    w = int(args.width)
-    h = int(args.height)
-    p = int(args.pattern)
-    t = int(args.generation)
-
-    i = GameOfLife(w, h)
-    i.initialize(p)
-    i.proceed(t)

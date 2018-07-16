@@ -1,6 +1,11 @@
 import math
 
+'''
+This is a class for generating map with certain image.
+'''
+
 class Map:
+    #Initialize
     def __init__(self, w = 0, h = 0):
         self.set_map(w, h)
         
@@ -10,7 +15,7 @@ class Map:
         self.w = w
         self.h = h
     
-    
+    #Generate a glider image in the middle of map
     def glider(self):
         centerx = math.ceil(self.w / 2) - 1
         centery = math.ceil(self.h / 2) - 1
@@ -24,6 +29,7 @@ class Map:
         except:
             pass
 
+    #Generate a lightweight image in the middle of map
     def lightweight(self):
         centerx = math.ceil(self.w / 2) - 1
         centery = math.ceil(self.h / 2) - 1
@@ -41,6 +47,7 @@ class Map:
         except:
             pass
 
+    #Generate a puslar image in the middle of map
     def puslar(self):
         centerx = math.ceil(self.w / 2) - 1
         centery = math.ceil(self.h / 2) - 1
